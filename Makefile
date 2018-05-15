@@ -6,11 +6,11 @@
 #    By: jukim <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/14 20:31:13 by jukim             #+#    #+#              #
-#    Updated: 2018/05/14 20:37:19 by jukim            ###   ########.fr        #
+#    Updated: 2018/05/15 16:51:03 by jukim            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = test 
+NAME = ft_printf 
 FILES = ft_printf.c
 SRC = $(addprefix src/, $(FILES))
 CFLAGS = -I ./includes/ -I src/libft -Wall -Wextra -Werror

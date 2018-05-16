@@ -6,7 +6,7 @@
 /*   By: jukim <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/14 19:08:50 by jukim             #+#    #+#             */
-/*   Updated: 2018/05/15 16:46:05 by jukim            ###   ########.fr       */
+/*   Updated: 2018/05/15 16:56:49 by jukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,10 @@ void	ft_printf(const char * restrict format, ...)
 	}
 	va_end(p->ap);
 	free(p);
+}
+
+int		main()
+{
+	ft_printf("hi");
+	return 0;
 }

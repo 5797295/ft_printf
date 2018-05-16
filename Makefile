@@ -6,29 +6,109 @@
 #    By: jukim <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/14 20:31:13 by jukim             #+#    #+#              #
-#    Updated: 2018/05/15 16:51:03 by jukim            ###   ########.fr        #
+#    Updated: 2018/05/15 18:39:36 by jukim            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ft_printf 
-FILES = ft_printf.c
-SRC = $(addprefix src/, $(FILES))
-CFLAGS = -I ./includes/ -I src/libft -Wall -Wextra -Werror
-LFLAGS = -L ./src/libft/ -lft
-OBJ = $(FILES:.c=.o)
+NAME = ft_printf.a
 
-all = $(NAME)
+FILE1 = ft_printf.c
+
+FILE2 = ft_memset.c			\
+		ft_bzero.c			\
+		ft_memcpy.c			\
+		ft_memccpy.c		\
+		ft_memmove.c		\
+		ft_memchr.c			\
+		ft_memcmp.c			\
+		ft_strlen.c			\
+		ft_strdup.c			\
+		ft_strcpy.c			\
+		ft_strncpy.c		\
+		ft_strcat.c			\
+		ft_strncat.c		\
+		ft_strlcat.c		\
+		ft_strchr.c			\
+		ft_strrchr.c		\
+		ft_strstr.c			\
+		ft_strnstr.c		\
+		ft_strcmp.c			\
+		ft_strncmp.c		\
+		ft_atoi.c			\
+		ft_isalpha.c		\
+		ft_isdigit.c		\
+		ft_isalnum.c		\
+		ft_isascii.c		\
+		ft_isprint.c		\
+		ft_toupper.c		\
+		ft_tolower.c		\
+		ft_memalloc.c		\
+		ft_memdel.c			\
+		ft_strnew.c			\
+		ft_strdel.c			\
+		ft_strclr.c			\
+		ft_striter.c		\
+		ft_striteri.c		\
+		ft_strmap.c			\
+		ft_strmapi.c		\
+		ft_strequ.c			\
+		ft_strnequ.c		\
+		ft_strsub.c			\
+		ft_strjoin.c		\
+		ft_strtrim.c		\
+		ft_strsplit.c		\
+		ft_itoa.c			\
+		ft_putchar.c		\
+		ft_putstr.c			\
+		ft_putendl.c		\
+		ft_putnbr.c			\
+		ft_putchar_fd.c		\
+		ft_putstr_fd.c		\
+		ft_putendl_fd.c		\
+		ft_putnbr_fd.c		\
+		ft_lstnew.c			\
+		ft_lstdelone.c		\
+		ft_lstdel.c			\
+		ft_lstadd.c			\
+		ft_lstiter.c		\
+		ft_lstmap.c			\
+		ft_match.c			\
+		ft_concat_params.c	\
+		ft_sort_params.c	\
+		ft_range.c			\
+		ft_swap.c			\
+		rgb.c
+
+SRC1 = $(addprefix src/ft_printf/, $(FILE1))
+
+SRC2 = $(addprefix src/libft/, $(FILE2))
+
+WFLAG = -Wall -Werror -Wextra
+
+OPTION = -c -I includes
+
+OBJ1 = $(FILE1:.c=.o)
+
+OBJ2 = $(FILE2:.c=.o)
+
+all: $(NAME)
 
 $(NAME):
-	@make -C src/libft
-	@gcc $(CFLAGS) -c $(SRC)
-	@gcc $(CFLAGS) $(LFLAGS) $(OBJ) -o $(NAME)
+	@gcc $(WFLAG) $(OPTION) $(SRC1) $(SRC2)
+	@ar rc $(NAME) $(OBJ1) $(OBJ2)
+	@rm -rf obj1 obj2
+	@mkdir obj1 obj2
+	@mv $(OBJ1) obj1/
+	@mv $(OBJ2) obj2/
+	@ranlib $(NAME)
+	@echo "\033[0;31m\033[1m\(>ㅠ<)/"
 
 clean:
-	@/bin/rm -f *.o *~ */*.o */*~
+	@/bin/rm -rf obj1 obj2
 
 fclean: clean
-	@make fclean -C ./src/libft
 	@/bin/rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: $(NAME) all clean fclean re

@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jukim <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/14 19:15:04 by jukim             #+#    #+#             */
-/*   Updated: 2018/05/16 15:37:03 by jukim            ###   ########.fr       */
+/*   Created: 2018/05/15 18:52:31 by jukim             #+#    #+#             */
+/*   Updated: 2018/05/16 22:59:52 by jukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
+#include <stdio.h>
 
-# include "libft.h"
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdarg.h>
-
-typedef struct	s_yee
+int		main()
 {
-	va_list ap;
-	char	*s;
-	int		n;
-	long long ll;
-	void	*v;
-}				t_yee;
+	char *s = "qwer";
 
-void	ft_printf(const char * restrict format, ...);
-
-# endif
+	printf("P - %s %p %x fd\n", s, &s, 123);
+	ft_printf("F - %s %p %+10d\n", s, &s, 123);
+	printf("%-10s\n", "abc");
+	printf("%5.2s\n", "123456");
+	return (0);
+}

@@ -6,7 +6,7 @@
 /*   By: jukim <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/26 15:28:11 by jukim             #+#    #+#             */
-/*   Updated: 2018/05/14 14:43:25 by jukim            ###   ########.fr       */
+/*   Updated: 2018/05/16 22:40:36 by jukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,6 @@ char			*ft_sort_params(int argc, char **argv);
 void			ft_swap(int *a, int *b);
 int				*ft_range(int min, int max);
 int				rgb(int r, int g, int b);
+char			*ft_itoa_base(unsigned long long n, int base);
 
 #endif

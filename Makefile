@@ -6,11 +6,11 @@
 #    By: jukim <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/14 20:31:13 by jukim             #+#    #+#              #
-#    Updated: 2018/05/15 18:39:36 by jukim            ###   ########.fr        #
+#    Updated: 2018/05/16 21:56:24 by jukim            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ft_printf.a
+NAME = libftprintf.a
 
 FILE1 = ft_printf.c
 
@@ -77,7 +77,8 @@ FILE2 = ft_memset.c			\
 		ft_sort_params.c	\
 		ft_range.c			\
 		ft_swap.c			\
-		rgb.c
+		rgb.c				\
+		ft_itoa_base.c
 
 SRC1 = $(addprefix src/ft_printf/, $(FILE1))
 

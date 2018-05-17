@@ -6,7 +6,7 @@
 /*   By: jukim <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/27 18:57:13 by jukim             #+#    #+#             */
-/*   Updated: 2018/04/28 00:22:24 by jukim            ###   ########.fr       */
+/*   Updated: 2018/05/16 21:39:08 by jukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,12 @@ int		ft_atoi_base(const char *str, int base)
 	while (*str == '\n' && *str == '\t' && *str == '\v' &&
 			*str == ' ' && *str == '\f' && *str == '\r')
 		++str;
+	if (*str == '0')
+	{
+		++str;
+		if (*str == 'x')
+			++str;
+	}
 	*str == '-' ? neg = -1 : 0;
 	*str == '-' || *str == '+' ? ++str : 0;
 	while ((*str >= '0' && *str <= '9') ||

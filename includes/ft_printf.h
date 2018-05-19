@@ -6,7 +6,7 @@
 /*   By: jukim <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/14 19:15:04 by jukim             #+#    #+#             */
-/*   Updated: 2018/05/16 15:37:03 by jukim            ###   ########.fr       */
+/*   Updated: 2018/05/18 00:14:05 by jukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ typedef struct	s_yee
 {
 	va_list ap;
 	char	*s;
+	char	c;
 	int		n;
+	char	*minimum1;
+	int		minimum2;
 	long long ll;
 	void	*v;
 }				t_yee;

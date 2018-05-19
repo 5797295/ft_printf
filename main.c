@@ -6,7 +6,7 @@
 /*   By: jukim <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/15 18:52:31 by jukim             #+#    #+#             */
-/*   Updated: 2018/05/18 00:14:00 by jukim            ###   ########.fr       */
+/*   Updated: 2018/05/18 23:29:23 by jukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,13 @@
 
 int		main()
 {
-	char *s = "qwer";
+	char *s = "123";
 
-	printf("P - %%s: %s	%%p: %p	%%c: %c %c\n", s, &s, 'a', 65);
-	ft_printf("F - %%s: %s	%%p: %p	%%c: %c %c\n", s, &s, 'a', 65);
-	printf("%-10s\n%10s\n", "abc", "abc");
-	printf("%-5s\n", "123456");
+//	printf("P - %%s: %12s	%%p: %p	%%c: %c %c\n", s, &s, 'a', 65);
+//	ft_printf("F - %%s: %12s	%%p: %p	%%c: %c %c\n", s, &s, 'a', 65);
+//	printf("%10s\n%10d\n", "abc", 123);
+//	printf("%-5s\n", "123456");
+	printf("P - %-+010s %+-5d as\n", s, 123);
+	ft_printf("F - %-+010s %+-5d as\n", s, 123);
 	return (0);
 }

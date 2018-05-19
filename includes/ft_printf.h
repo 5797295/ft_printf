@@ -6,7 +6,7 @@
 /*   By: jukim <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/14 19:15:04 by jukim             #+#    #+#             */
-/*   Updated: 2018/05/18 00:14:05 by jukim            ###   ########.fr       */
+/*   Updated: 2018/05/18 22:59:14 by jukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,13 @@ typedef struct	s_yee
 	int		n;
 	char	*minimum1;
 	int		minimum2;
-	long long ll;
+	int		minus;
+	char	*w;
+	int		wl;
+	int		i;
+	int		width;
+	int		plus;
+	int		zero;
 	void	*v;
 }				t_yee;
 

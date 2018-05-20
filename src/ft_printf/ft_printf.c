@@ -6,7 +6,7 @@
 /*   By: jukim <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/14 19:08:50 by jukim             #+#    #+#             */
-/*   Updated: 2018/05/19 19:57:01 by jukim            ###   ########.fr       */
+/*   Updated: 2018/05/19 20:07:18 by jukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,18 +45,18 @@ int		low_c(t_yee *p, int i, int j)
 	p->c = va_arg(p->ap, int);
 	if (p->minus == 1 && p->width > 1)
 	{
-		write(1, &p->c, 1);
+		p->byte += write(1, &p->c, 1);
 		while (p->width > 1 && ++j < p->width - 1)
-			write(1, p->zero == 1 ? " " : "0" , 1);
+			p->byte += write(1, p->zero == 1 ? " " : "0" , 1);
 	}
 	else if (p->minus != 1 && p->width > 1)
 	{
 		while (p->width > 1 && ++j < p->width - 1)
-			write(1, p->zero == 1 ? " " : "0", 1);
-		write(1, &p->c, 1);
+			p->byte += write(1, p->zero == 1 ? " " : "0", 1);
+		p->byte += write(1, &p->c, 1);
 	}
 	else
-		write(1, &p->c, 1);
+		p->byte += write(1, &p->c, 1);
 	return (i);
 }
 
@@ -67,18 +67,18 @@ int		low_p(t_yee *p, int i, int j, int n)
 	n = ft_strlen(p->s);
 	if (p->minus == 1 && p->width > 1)
 	{
-		write(1, p->s, n);
+		p->byte += write(1, p->s, n);
 		while (p->width > n && ++j < p->width - n)
-			write(1, p->zero == 1 ? " " : "0", 1);
+			p->byte += write(1, p->zero == 1 ? " " : "0", 1);
 	}
 	else if (p->minus != 1 && p->width > 1)
 	{
 		while (p->width > n && ++j < p->width - n)
-			write(1, p->zero == 1 ? " " : "0", 1);
-		write(1, p->s, n);
+			p->byte += write(1, p->zero == 1 ? " " : "0", 1);
+		p->byte += write(1, p->s, n);
 	}
 	else
-		write(1, p->s, n);
+		p->byte += write(1, p->s, n);
 	free(p->s);
 	return (i);
 }
@@ -92,18 +92,18 @@ int		upper_lower_x_and_o(t_yee *p, int i, int j, int n)
 	n = ft_strlen(p->s);
 	if (p->minus == 1 && p->width > 1)
 	{
-		write(1, p->s, n);
+		p->byte += write(1, p->s, n);
 		while (p->width > n && ++j < p->width - n)
-			write(1, p->zero == 1 ? " " : "0", 1);
+			p->byte += write(1, p->zero == 1 ? " " : "0", 1);
 	}
 	else if (p->minus != 1 && p->width > 1)
 	{
 		while (p->width > n && ++j < p->width - n)
-			write(1, p->zero == 1 ? " " : "0", 1);
-		write(1, p->s, n);
+			p->byte += write(1, p->zero == 1 ? " " : "0", 1);
+		p->byte += write(1, p->s, n);
 	}
 	else
-		write(1, p->s, n);
+		p->byte += write(1, p->s, n);
 	free(p->s);
 	return (i);
 }
@@ -117,26 +117,26 @@ int		low_d_and_plus(t_yee *p, int i, int j, int n)
 	{
 		if (p->plus == 1)
 		{
-			p->n > 0 ? write(1, "+", 1) : 0;
+			p->n > 0 ? p->byte += write(1, "+", 1) : 0;
 			p->width--;
 		}
-		write(1, p->s, n);
+		p->byte += write(1, p->s, n);
 		while (p->width > n && ++j < p->width - n)
-			write(1, p->zero == 1 ? " " : "0", 1);
+			p->byte += write(1, p->zero == 1 ? " " : "0", 1);
 	}
 	else if (p->minus != 1 && p->width > 1)
 	{
 		p->plus == 1 ? p->width-- : 0;
 		if (p->plus == 1 && p->zero == 0)
-			p->n > 0 ? write(1, "+", 1) : 0;
+			p->n > 0 ? p->byte += write(1, "+", 1) : 0;
 		while (p->width > n && ++j < p->width - n)
-			write(1, p->zero == 1 ? " " : "0", 1);
+			p->byte += write(1, p->zero == 1 ? " " : "0", 1);
 		if (p->plus == 1 && p->zero == 1)
-			p->n > 0 ? write(1, "+", 1) : 0;
-		write(1, p->s, n);
+			p->n > 0 ? p->byte += write(1, "+", 1) : 0;
+		p->byte += write(1, p->s, n);
 	}
 	else
-		write(1, p->s, n);
+		p->byte += write(1, p->s, n);
 	free(p->s);
 	return (i);
 }
@@ -147,18 +147,18 @@ int		low_s(t_yee *p, int i, int j, int n)
 	n = ft_strlen(p->s);
 	if (p->minus == 1 && p->width > 1)
 	{
-		write(1, p->s, n);
+		p->byte += write(1, p->s, n);
 		while (p->width > n && ++j < p->width - n)
-			write(1, p->zero == 1 ? " " : "0", 1);
+			p->byte += write(1, p->zero == 1 ? " " : "0", 1);
 	}
 	else if (p->minus != 1 && p->width > 1)
 	{
 		while (p->width > n && ++j < p->width - n)
-			write(1, p->zero == 1 ? " " : "0", 1);
-		write(1, p->s, n);
+			p->byte += write(1, p->zero == 1 ? " " : "0", 1);
+		p->byte += write(1, p->s, n);
 	}
 	else
-		write(1, p->s, n);
+		p->byte += write(1, p->s, n);
 	return (i);
 }
 
@@ -178,7 +178,7 @@ int		init(t_yee *p, const char *restrict format, int i)
 	}
 	else if (format[i] == '%')
 	{
-		write(1, "%", 1);
+		p->byte += write(1, "%", 1);
 		i++;
 	}
 	else if (format[i] == 'c')
@@ -193,24 +193,25 @@ void	init_values(t_yee *p)
 	p->zero = 1;
 }
 
-int		hash(const char *restrict format, int i)
+int		hash(t_yee *p, const char *restrict format, int i)
 {
 	if (format[i + 2] == 'o')
-		write(1, "0", 1);
+		p->byte += write(1, "0", 1);
 	else if (format[i + 2] == 'x')
-		write(1, "0x", 2);
+		p->byte += write(1, "0x", 2);
 	else if (format[i + 2] == 'X')
-		write(1, "0X", 2);
+		p->byte += write(1, "0X", 2);
 	return (i);
 }
 
-void	ft_printf(const char *restrict format, ...)
+int		ft_printf(const char *restrict format, ...)
 {
 	t_yee	*p;
 	int i;
 
 	p = malloc(sizeof(t_yee));
 	va_start(p->ap, format);
+	p->byte = 0;
 	i = -1;
 	while (format[++i] != '\0')
 	{
@@ -225,7 +226,7 @@ void	ft_printf(const char *restrict format, ...)
 				else if (format[i + 1] == '-')
 					p->minus = 1;
 				else if(format[i + 1] == '#')
-					i = hash(format, i);
+					i = hash(p, format, i);
 				i++;
 			}
 			if (ft_isdigit(format[i + 1]) == 1)
@@ -233,8 +234,9 @@ void	ft_printf(const char *restrict format, ...)
 			else
 				i = init(p, format, ++i);
 		}
-		write(1, &format[i], 1);
+		p->byte += write(1, &format[i], 1);
 	}
 	va_end(p->ap);
 	free(p);
+	return (p->byte);
 }

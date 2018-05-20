@@ -6,7 +6,7 @@
 #    By: jukim <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/14 20:31:13 by jukim             #+#    #+#              #
-#    Updated: 2018/05/16 21:56:24 by jukim            ###   ########.fr        #
+#    Updated: 2018/05/19 16:24:13 by jukim            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -78,7 +78,9 @@ FILE2 = ft_memset.c			\
 		ft_range.c			\
 		ft_swap.c			\
 		rgb.c				\
-		ft_itoa_base.c
+		ft_itoa_base.c		\
+		ft_itoa_base_lower.c\
+		ft_itoa_base_upper.c
 
 SRC1 = $(addprefix src/ft_printf/, $(FILE1))
 

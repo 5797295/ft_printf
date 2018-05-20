@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
+/*   ft_itoa_base_lower.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jukim <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/16 21:44:02 by jukim             #+#    #+#             */
-/*   Updated: 2018/05/19 16:23:20 by jukim            ###   ########.fr       */
+/*   Updated: 2018/05/19 17:28:53 by jukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,20 +25,18 @@ static int	ft_intlen(long nb, int base)
 	return (i);
 }
 
-char		*ft_itoa_base(unsigned long long n, int base)
+char		*ft_itoa_base_lower(unsigned long long n, int base)
 {
 	char				*s;
 	unsigned long long	nb;
 	int					len;
 
 	nb = n;
-	len = ft_intlen(nb, base) + 2;
+	len = ft_intlen(nb, base);
 	if (!(s = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	s[len] = '\0';
-	s[0] = '0';
-	s[1] = 'x';
-	while (len > 1)
+	while (len >= 0)
 	{
 		nb = n % base;
 		if (nb >= 10)

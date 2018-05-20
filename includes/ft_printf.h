@@ -6,7 +6,7 @@
 /*   By: jukim <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/14 19:15:04 by jukim             #+#    #+#             */
-/*   Updated: 2018/05/18 22:59:14 by jukim            ###   ########.fr       */
+/*   Updated: 2018/05/19 16:54:18 by jukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ typedef struct	s_yee
 	int		plus;
 	int		zero;
 	void	*v;
+	char	x;
 }				t_yee;
 
 void	ft_printf(const char * restrict format, ...);

@@ -6,7 +6,7 @@
 /*   By: jukim <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/26 15:28:11 by jukim             #+#    #+#             */
-/*   Updated: 2018/05/16 22:40:36 by jukim            ###   ########.fr       */
+/*   Updated: 2018/05/19 16:23:48 by jukim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,7 @@ void			ft_swap(int *a, int *b);
 int				*ft_range(int min, int max);
 int				rgb(int r, int g, int b);
 char			*ft_itoa_base(unsigned long long n, int base);
+char			*ft_itoa_base_lower(unsigned long long n, int base);
+char			*ft_itoa_base_upper(unsigned long long n, int base);
 
 #endif
